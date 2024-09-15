@@ -1,0 +1,39 @@
+brand: 分类变量
+57个品牌
+进行OneHot编码
+
+model:
+过于复杂
+去除
+
+model_year, milage: 数值型变量
+标准化: from sklearn.preprocessing import StandardScaler()
+
+fuel_type:
+7种能源
+Pipeline转换为5种, 对缺失值转换为Gasoline:
+  from sklearn.impute import SimpleImputer
+  SimpleImputer(strategy='most_frequent')
+识别字符串归类为以下五种:
+Gasoline, Hybrid, Flex_Fuel, Diesel, Others
+
+engine:
+Pipeline识别字符串 "HP", "L" 马力与排量
+转换为属性 HP， L
+
+transmission:
+Pipeline识别字符串转换为
+手动变速箱（MT）: M/T Manual MT
+自动变速箱（AT）: A/T Automatic AT Overdrive CVT DCT
+Others:
+
+ext_col, int_col:
+Pipeline识别转换为
+Black White Gray Silver Blue Red Green Gold Brown Orange Beige Yellow
+
+accident:
+缺失值自动填充无已知事故
+OneHot
+
+clean_title:
+缺失值当作0, Yes当作1
